@@ -51,6 +51,9 @@ tunnel () {
 }
 alias tunel=tunnel
 
+geolocate () {
+    curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jq -r '"\(.location.lat):\(.location.lng)"' || echo '50.1113:14.4063'
+}
 
 # https://github.com/akermu/emacs-libvterm
 vterm_printf(){
